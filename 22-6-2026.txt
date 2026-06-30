@@ -1,0 +1,147 @@
+22-6-2026
+square of each digit 
+1. input = 1234 output=14916 (reverse output =4321)
+2. Array input = 1 2 3 4  output=24 12 8 6
+3. linkedlist = remove all nodes which are duplicates
+input = 1 1 2 3 3 4 4 5 ouput = 2 5
+
+find the avr *
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    float avg = (a + b + c) / 3;
+
+    cout << avg;
+
+    return 0;
+}
+-------------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    //int a, b, c;
+    //cin >> a >> b >> c;
+ 
+    //arithometic opereter
+    int a = 10; // % reminder
+    int b = 20;
+    int leftshift=a<<1;
+    int rightshift=b>>1;
+    
+    cout << b % a << endl;
+    cout << a % b << endl;
+
+    // bitwise opreter
+    cout << a | b << endl;
+    
+    
+    // relational opreter
+    {
+        int attendence =80;
+        if(attendence>=75){
+            cout<<"elegible for exam"<<endl;
+
+        }else if(attendence>=60){
+            cout<<"after taking permission allowed"<<endl;
+        }
+        else{
+            cout<<"not elegible"<<endl;
+        }
+    }
+
+    // float avg = (a + b + c) / 3;
+
+    //cout << avg;
+
+    return 0;
+}
+
+// take 3 number input and find largest of them
+int main() {
+    int a, b, c;
+
+    cin >> a >> b >> c;
+
+    if (a >= b && a >= c)
+        cout << " a is Largest ";
+    else if (b >= a && b >= c)
+        cout << "b isLargest";
+        
+    else
+        cout << "c is Largest;
+        
+}
+//write a code given nuber is dived my 3 qnd 5 both or not 
+int main() {
+    int n;
+    cin >> n;
+
+    if (n % 3 == 0 && n % 5 == 0)
+        cout << "Divisible by both 3 and 5";
+    else
+        cout << "Not divisible by both 3 and 5";
+
+}
+// you have to integer input n then you to taken number and provide their sum input 5
+      1 2 3 4 5
+output =15
+// for(int i=1; i<=5; i++){
+// cout<<i<<" "
+//}
+qution 1
+****   1      *
+****   12    ***
+****   123  *****
+****   1234  ***
+****          * 
+
+2.find factorial of a number 
+input =5 output 120
+3. convert a number binary to decimal input= 1010 output=10
+4. conver decimal to binary 
+input=10 output = 1010
+5.provide sum of each digit of number input=1234 output=10
+
+
+ //find the factorial
+
+int main()
+{
+    int n,f=1;
+
+    cin>>n;
+
+    for(int i=1;i<=n;i++)
+    {
+        f=f*i;
+    }
+    cout<<f;
+    return 0;
+}
+
+--------------------------------------------------
+// provide sum of ech digit of number
+//input=1234 output=10
+
+int main()
+{
+    int n,sum=0;
+
+    cin>>n;
+
+    while(n>0)
+    {
+        sum=sum+n%10;
+        n=n/10;
+    }
+
+    cout<<sum;
+
+    return 0;
+}
