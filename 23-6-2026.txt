@@ -1,0 +1,138 @@
+23-6-2026
+
+#include <iostream>
+using namespace std;
+
+void A() {
+    cout << "1";
+}
+
+void B() {
+    cout << "2";
+    A();
+}
+
+void C() {
+    cout << "3";
+    A();
+}
+
+void D() {
+    C();
+    cout << "4";
+}
+
+int main() {
+    D();
+    cout << "5";
+
+    return 0;
+}
+
+1. take a integer input and find its factorial using function
+2. take 2 integer input n and r find its nCr using function
+n!/(r! *(n-r)
+input n=5 output=10
+
+
+1. qution
+int fact(int a)
+{
+    if(a == 0 || a == 1)
+    {
+        return 1;
+    }
+
+    return a * fact(a - 1);
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int s = fact(n);
+    cout << s;
+
+    return 0;
+}
+// 2nd qution 
+
+int fact(int n)
+{
+    if(n == 0 || n == 1)
+        return 1;
+
+    return n * fact(n - 1);
+}
+
+int nCr(int n, int r)
+{
+    return fact(n) / (fact(r) * fact(n - r));
+}
+
+int main()
+{
+    int n, r;
+    cin >> n >> r;
+
+    cout << nCr(n, r);
+
+    return 0;
+}
+
+3. input =1234   reverse this number 
+output =4321
+
+4. input = 1234 cout digits
+output =4
+
+// 3 qution 
+using reverse function
+
+int main()
+{
+    string n;
+    cin >> n;
+
+    reverse(n.begin(), n.end());
+
+    cout << n;
+
+    return 0;
+}
+---------------------------------------------
+recrsion
+#include <iostream>
+#include <algorithm>
+ using namespace std;
+ int fact(int n){
+     if(n==1)return 1;
+     int z=fact(n-1);
+     int ans=n*z;
+     retun ans;
+ }
+
+1. print n to 1
+2. print 1 to n
+3. count digits in a number
+4. multiply two number
+5. find power of number inpiut 2 5 output =32
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    for(int i=n; i>=1; i--)
+    {
+        cout << i << " ";
+    }
+
+    return 0;
+}
+
+
