@@ -1,6 +1,6 @@
-22-6-2026
-square of each digit 
-1. input = 1234 output=14916 (reverse output =4321)
+//22-6-2026
+//square of each digit 
+//1. input = 1234 output=14916 (reverse output =4321)
 2. Array input = 1 2 3 4  output=24 12 8 6
 3. linkedlist = remove all nodes which are duplicates
 input = 1 1 2 3 3 4 4 5 ouput = 2 5
