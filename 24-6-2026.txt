@@ -1,0 +1,90 @@
+//24-6-2026
+
+//Pointer
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int x=10;  
+    int *ptr=&x;
+    cout<<"x= "<<x<<endl;
+    cout<<"& ="<<&<<endl;
+    cout<<"ptr="<<ptr<<endl;
+    cout<,"*ptr="<<*ptr<<endl;
+    
+    return 0;
+	// your code goes here
+
+}
+
+// creat float and double pointer 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    float x = 10;
+
+    // create float pointer
+    float *ptr = &x;
+
+    cout << "x = " << x << endl;
+    cout << "&x = " << &x << endl;
+    cout << "ptr = " << ptr << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+    return 0;
+}
+
+//Array
+
+
+int main() {
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0; i<n;i++){
+        cin>>arr[i];
+    }
+    for(int i =0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    
+// 1. give an array print it reverse
+// input = 5   1 2 3 4 5
+// output 5 4 3 2 1
+
+// 2 multiplication of an array
+// input=5  1 2 3 4 5  output=120
+
+// 3 swap alternate in an array
+// input= 1 2 3 4 5 6 output = 2 1 4 3 6 5
+
+// 4. count frecuency of a number x in array
+// input 1 2 3 2 4 2 x=2 output 3
+
+// 5. find maximum element in an array
+// input=1 2 3 4 5 output =5
+
+// 6.array contains only 0 and 1 sort it without using sorting algo 
+// input=0 1 0 1 0 1 output 0 0 0 1 1 1
+
+// 7.find duplicate in an array
+// input=1 2 3 4 5 2  output 2
+
+// 5-solution
+int main() {
+    int arr[5];
+
+    for(int i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+
+    int max = arr[0];
+
+    for(int i = 1; i < 5; i++) {
+        if(arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+// 217 27 66 283 136 88 1920 53 448 leedcode problem
