@@ -1,0 +1,138 @@
+29-06-2026
+
+
+create a n class it sould contain a property that is balance  create its consturector and 2 object and dynamic both and print the balance for both objects.
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class Account {
+public:
+    int balance;
+
+    // Constructor
+    Account(int b) {
+        balance = b;
+    }
+};
+
+int main() {
+
+    // Static Object
+    Account obj1(5000);
+
+    // Dynamic Object
+    Account *obj2 = new Account(10000);
+
+    // Print Balance
+    cout << "Balance of Static Object: " << obj1.balance << endl;
+    cout << "Balance of Dynamic Object: " << obj2->balance << endl;
+
+    // Free Memory
+    delete obj2;
+
+    return 0;
+}
+
+
+
+
+// //     cout << "Enter Roll Number: ";
+// //     cin >> students[studentCount].rollNo;
+
+// //     cin.ignore();
+
+// //     cout << "Enter Name: ";
+// //     getline(cin, students[studentCount].name);
+
+// //     cout << "Enter Marks: ";
+// //     cin >> students[studentCount].marks;
+
+// //     students[studentCount].grade = assignGrade(students[studentCount].marks);
+
+// //     studentCount++;
+
+// //     cout << "Student Added Successfully.\n";
+// // }
+
+// // void displayStudents() {
+// //     if (studentCount == 0) {
+// //         cout << "No Student Records.\n";
+// //         return;
+// //     }
+
+// //     cout << "\nRoll No\tName\tMarks\tGrade\n";
+
+// //     for (int i = 0; i < studentCount; i++) {
+// //         cout << students[i].rollNo << "\t"
+// //              << students[i].name << "\t"
+// //              << students[i].marks << "\t"
+// //              << students[i].grade << endl;
+// //     }
+// // }
+
+// // int main() {
+// //     int choice;
+
+// //     do {
+// //         cout << "\nStudent Record System\n";
+// //         cout << "1. Add Student\n";
+// //         cout << "2. Display Students\n";
+// //         cout << "3. Exit\n";
+// //         cout << "Enter Choice: ";
+// //         cin >> choice;
+
+// //         switch (choice) {
+// //             case 1:
+// //                 addStudent();
+// //                 break;
+
+// //             case 2:
+// //                 displayStudents();
+// //                 break;
+
+// //             case 3:
+// //                 cout << "Thank You!\n";
+// //                 break;
+
+// //             default:
+// //                 cout << "Invalid Choice!\n";
+// //         }
+
+// //     } while (choice != 3);
+
+//     return 0;
+// }
+
+
+
+set a pass.
+#include <iostream>
+using namespace std;
+class Bank{
+    int balance =500;
+    public:
+    void setbalance(int password, int b){
+        if(password==1234)
+        {
+            balance=balance+b;
+            cout<<"balance updated";
+        }
+        else{
+            cout<<"invalid password";
+            
+        }
+    }
+    //friend functio9n 
+    int getbalance(int password){
+        if(password==1234) return balance;
+        else{
+            cout<<"invalid password";
+            return -1;
+        }
+    }
+}
