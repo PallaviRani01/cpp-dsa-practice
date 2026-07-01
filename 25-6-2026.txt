@@ -1,0 +1,182 @@
+25-6-2026
+
+sorting
+------------------------------
+bobble sort
+-------------
+int main()
+{
+   
+    int arr[] = {20,15,10,15};
+    int n = 4;
+    for (int i = 0; i < n; i++) cout << arr[i] << " ";
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1; j++) {
+            if (arr[j] > arr[j + 1])
+                swap(arr[j], arr[j + 1]);
+        }
+        cout << endl;
+        for (int i = 0; i < n; i++) cout << arr[i] << " ";
+    }
+}
+
+for disending order
+if (arr[j] < arr[j + 1])
+
+selection sort
+---------------
+ cout << endl;
+        for (int i = 0; i < n; i++) cout << arr[i] << " ";
+        //selection  sort 
+        for(int i=0; i<n-1;i++){
+            int min=arr[i];
+            int mindx=i;
+            for(int j=i+1;j<n;j++){
+                if(arr[j]<min){
+                    min=arr[j];
+                    mindx=j;
+                }
+            }
+            swap(arr[i],arr[mindx]);
+
+insertion sort
+--------------------
+        for(int i=1; i<n; i++){
+            int curr=arr[i]; int j=i-1;
+            while(j>=0){
+                if(arr[j]>curr) arr[j+1]=arr[j];
+                else break;
+                j--;
+            }
+            arr[j+1]=curr;
+}
+
+--------------------------------------------------------
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   //bubble sort
+    int arr[] = {20,15, 10,5};
+    int n = 4;
+    for (int i = 0; i < n; i++) cout << arr[i] << " ";
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1-i; j++) {
+            if (arr[j] < arr[j + 1])
+            //if (arr[j] > arr[j + 1])
+                swap(arr[j], arr[j + 1]);
+        }
+        cout << endl;
+        for (int i = 0; i < n; i++) cout << arr[i] << " ";
+        //selection  sort 
+        for(int i=0; i<n-1;i++){       
+            int min=arr[i];
+            int mindx=i;
+            for(int j=i+1;j<n;j++){
+                if(arr[j]<min){
+                    min=arr[j];
+                    mindx=j;
+                }
+            }
+            swap(arr[i],arr[mindx]);
+        }
+        //insertion sort
+        for(int i=1; i<n; i++){
+            int curr=arr[i]; int j=i-1;
+            while(j>=0){
+                if(arr[j]>curr) arr[j+1]=arr[j];
+                else break;
+                j--;
+            }
+            arr[j+1]=curr;
+        }
+        
+    }
+}
+-------------------------------------------------------------
+1.return true and false;
+checkwether an array is sorted or not 
+input 2 5 7 8 9   output = true
+
+2. merge two sorted array in single sorted array 
+input n1=3  arr=1 2 3  n2=3 arr=2 4 6
+
+3. sort 012
+input= 0 1 2 0 1 2  output  0 0 1 1 2 2 
+
+4. print all subarray of an array
+input =1 2 3
+output 
+1
+1 2
+1 2 3
+2
+2 3
+3
+
+5. find maximum sum of all subarrays 
+input = 1 2 -2 4 6  output=10
+
+6. find max sum of subarray having size k
+input= 1 2 3 4  k=2  output=7
+
+7. find majority element (>n/2 element) 
+input =2 1 2 2  output =2
+
+// 1st qution , find the sorted or not
+int main() {
+    int arr[] = {2, 5, 7, 8, 9};
+    int n = 5;
+
+    bool sorted = true;
+
+    for(int i = 0; i < n - 1; i++) {
+        
+        if(arr[i] > arr[i + 1]) {
+            smeorted = false;
+//(if it condistion is true , it mens arr is not sorted)
+            break;
+        }
+    }
+
+    if(sorted)
+        cout << "true";
+    else
+        cout << "false";
+
+    return 0;
+}
+
+//2nd qution , 
+logic 
+add both the array 
+then copy all the element arr2 and arr1
+the sort the arry 
+int main() {
+    int arr1[] = {1, 2, 3};
+    int arr2[] = {2, 4, 6};
+
+    int n1 = 3, n2 = 3;
+    int arr3[n1 + n2];
+
+    
+    for(int i = 0; i < n1; i++) {
+        arr3[i] = arr1[i];
+    }
+
+    for(int i = 0; i < n2; i++) {
+        arr3[n1 + i] = arr2[i];
+    }
+
+  
+    sort(arr3, arr3 + n1 + n2);
+
+    
+    for(int i = 0; i < n1 + n2; i++) {
+        cout << arr3[i] << " ";
+    }
+
+    return 0;
+}
