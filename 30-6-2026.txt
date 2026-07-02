@@ -1,0 +1,139 @@
+30-6-2026
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int arrint[5];
+    char arr[]="hello";
+    string str="abcd";
+    string str2="efgh";
+    string ans=str+str2;
+    int len=0;
+    // cout<<ans<<endl;
+    // for(int i=0; str[i]!='\0';i++){
+    //     len++;
+    // }
+    int n=ans.length();
+    cout<<n<<endl;
+   // cout<<len<endl;
+  //  cout<<str[2]<<endl;
+    //arr[3]='\0';
+  //  cout<<arr<endl;
+    // cout<<&arrint[0]<<endl;
+    
+    return 0;
+
+}
+
+
+1. find length og given string
+input="abcd" output=4;
+
+2. find number of words present in string 
+input ="we are ding strings"
+output=4
+
+3. reverse a string
+input="Oscar" output="racso"
+
+4.check a string palindrome or not
+input="rececar"  output="recso"
+
+5. compress string
+input=aaabbcdd output="a3b2cd2"
+
+6. reverse "we are doing string"
+output="string are doing we"
+
+------------3-------------
+#include <bits/stdc++.h>   
+using namespace std;
+
+int main() {
+
+    string str = "Oscar";
+    reverse(str.begin(), str.end());
+    cout << str << endl;
+
+    return 0;
+}
+
+    or 
+void reverstring(string &str){
+int s=0;
+int e=str.length()-1;
+while(s<=e){
+swap(str[s],str[e]);
+s++; e--;
+
+
+-----------1----------
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  
+    string str = "abcd";
+
+    int len = 0;
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        len++;
+    }
+
+    cout << len;
+    return 0;
+}
+---------6-----
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+ string str = "we are doing string";
+    reverse(str.begin(), str.end());
+    cout << str << endl;
+return 0;
+} 
+
+-------------2-----------
+
+ int numberfwords(string  &str){
+int space=0;
+for(int i=0;i<str.lenght();i++){
+	if(str[i]=' ') space++;
+}
+return space+1;
+}
+int main(){
+string str;
+getline(cin,str);
+
+cout<<numbarofwordes(str);
+}
+
+-------------4------------------
+bool checkpa_plindrome(string &str){
+string ans=reversestring(str){
+string ans=str;
+reversetring(str);
+return str==ans;
+}
+
+-----------------5------------------
+
+string compressstring(string &str){
+	
+	int count=1;
+int n=str.length();
+string ans=""; int prev =str[0];
+ans=ans+prev;
+for(int i=1 ; i<n;i++){
+if(str[i] == prev)count++;
+else{
+if(count>1) ans = ans+tp_string(count);
+ans+=str[i]; count=1;
+}
+}
+if(count >1) ans=ans+to_string(count);
+return ans;
+}
