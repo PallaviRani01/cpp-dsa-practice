@@ -1,0 +1,142 @@
+1-07-2026       
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+    class Animal{
+        public:
+        void sound(){
+            cout<<"animal sound"<<endl;
+        }
+    };
+    class Dog : Public Animal{
+        public: 
+        void sound(){
+            cout<<"bhau bhau"<<endl;
+            
+        }11:12 01-07-2026
+    };
+    int main()
+    {   
+        Animal *abcd =new Dog();
+        // Dog jakey;
+        abcd.sound();
+    }
+	
+
+}
+
+1.you have to create 4 classes 
+Student is your base class/Parent 
+intern/Placed is your child of Student
+DreamJob inherits both the class Intern/Placed
+Student class contains a single Property =x
+try to acces this X with 
+object of DreamJob class
+
+#include <bits/stdc++.h>
+using namespace std;
+class A{
+    public:
+    int x;
+}
+class B:public A{};
+class C: public A{};
+class D: public B, public c{};
+int main(){
+    D obj;
+    cout<<obj.B::x<<endl;
+    cout<<obj.C::x<<endl;
+}
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    unorder_map<string,int>map;
+    map["java"]=5;
+    map["cpp"]=30;
+    map["python"]=5;
+    map["javascripit"]=1;
+    for(auto it:map){
+       cout<<it.first<<" "<<it.second<<endl; 
+    }
+
+
+}
+
+
+#include <bits/stdc++.h>
+using namespace std;
+char highestcharacter(string &str){
+    unorder_map<char,int>map;
+    for(char ch : str){
+        map[ch]++;
+    }
+    int max=0; char maxchar='\0';
+    for(char ch : str){
+        if(map[ch]>max){
+            max=map[ch];
+            maxchar=ch;
+        }
+    }
+}
+int main() {
+    string str="ababcaba";
+    cout<,highestcharacter<<endl;
+}
+
+Two sum
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+
+        unordered_map<int, int> mp;
+
+        for (int i = 0; i < nums.size(); i++) {
+
+            int remaining = target - nums[i];
+
+            if (mp.find(remaining) != mp.end()) {
+                return {mp[remaining], i};
+            }
+
+            mp[nums[i]] = i;
+        }
+
+        return {};
+    }
+};
+
+
+#include <bits/stdc++.h>
+using namespace std;
+INT sumofarray(int arr[], int i, intn){
+    if(i==n) return 0;
+    int z=sumofarray(arr, i+1,n);
+    return arr[i]+z;
+    
+}
+int main()
+{
+    int arr[] = {1,2,3,4,5}; int n=5;
+    cout<<sumofarray(arr,0,n);
+}
+
+1.Linear search using recursion
+input=1 2 3 4 5 t=4 output=3
+2.binary search using recursion
+input =  1 2 3 4 5 t=4 output=3
+3.print all off odd no. in array using recursion
+input=1 2 3 4 5  output=9
+4.print last occurrence of an element
+input=1 2 3 4 5  t=4 output=3
+5.do 4th qution without traversing from end
+input=1 2 3 2 5 t=4 output=3
+
+
+
+
+
