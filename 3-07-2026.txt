@@ -1,0 +1,57 @@
+3-07-2026
+
+class Student{
+public:
+int marks;
+student(int marks){
+this->marks=marks;
+}
+};
+int main(){
+student ram(10);
+student naz(20);
+student *neha=new Studen(30);
+cout<<naz.marks<<""<<neha->marks;
+}
+
+link list
+-------------------
+
+public
+int datta;
+Node *next;
+	Node(int data){
+		this->data=data;
+		next=NULL;
+	}
+void printLinkList(Node *head){
+while(head!=NULL){
+cout<<head ->data<<"";
+head->data;
+head=head->next;
+}
+};
+int main()
+{
+	Node n1(10);
+	Node n2(2o);
+	Node n3(30);
+	n1.next=&n2;
+	n2.next=&n3;
+	cout<<n1.data<<""<<n1.next<<endl;
+	cout<<n1.next->data<,endl;
+	Node *head=n1;+
+	printLinkedList(head);
+return 0;
+}
+--------------------------------------
+void printLinkList(Node *head){
+Node *tem=head;
+while(head!=NULL){
+cout<<head ->data<<endl;
+temp=temp->data<<endl;
+}
+};
+int main(){
+Node 
+
