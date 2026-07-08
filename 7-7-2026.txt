@@ -1,0 +1,36 @@
+7-7-2026
+
+1. Find prefix max of an array
+input=1 3 2 6 4
+output=1 3 3 6 6
+2. give an array and k you have to find max sum arr[i]+ arr[j]
+considering I and j as index where j-i>=k
+testcase 1
+input = 23 98 42 k=2 output=55
+testcase 2
+input = 3 5 8 1 9 2 k=2
+output=17
+
+-------------------------------------------------------------------------
+
+vector<int> prefixmax(vector<int> arr)
+int n=arr.size();
+vector<int>prefix(n);
+prefix[0]=arr[0];
+for(int i=0;i<n; i++){
+    prefix[i]=max(arr[i],prefix[i-1]);
+   
+    }
+return prefix;
+}
+---------------------------------------------------
+
+int maxsum=0;
+for(int i=0; i<n;i++){
+    for(int j=i+1; j<n;i++){
+        if(j-i=k){
+            maxsum=max(maxsum,arr[i]+arr[j]);
+        }
+    }
+}
+------------------------------------------------------
