@@ -1,0 +1,241 @@
+8-7-2026
+
+1. give integer n
+concatenate all non zero digits of n(in same order)
+to from x let sum of all digits=sum
+return x*sum
+input=10203004
+output=12340
+
+54. Spiral Matrix(leetcode)
+
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        
+        vector<int>ans;
+        int row=matrix.size();
+        int col =matrix[0].size();
+        int count =0;
+        int total =row*col;
+        
+        //// all index 
+        
+        int startingrow=0;
+        int startingcol=0;
+        int endingrow=row-1;
+        int endingcol=col-1;
+        
+        while(count<total)
+        {
+            for(int i=startingcol;count<total && i<=endingcol; i++)
+            {
+                ans.push_back(matrix[startingrow][i]);
+                count++;
+            }
+            startingrow++;
+            
+            for(int i=startingrow;count<total && i<=endingrow; i++)
+            {
+                ans.push_back(matrix[i][endingcol]);
+                count++;
+            }
+            endingcol--;
+            
+            for(int i=endingcol;count<total && i>=startingcol; i--)
+            {
+                ans.push_back(matrix[endingrow][i]);
+                count++;
+            }
+            endingrow--;
+            
+            for(int i=endingrow;count<total && i>=startingrow; i--)
+            {
+                ans.push_back(matrix[i][startingcol]);
+                count++;
+            }
+            startingcol++;
+        }
+        
+        
+        return ans;
+        
+        
+    }
+};
+
+
+
+2. create a dobly linkedlist and print it contains an extra prev pointer by which we can also move to prev node
+
+class Node{
+public:
+  int data;
+  Node *next;
+  Node *prev;
+  Node(int data){
+  this->data=data;
+  next=NULL; prev=NULL;
+   };
+void printlinkedList(Node*head){
+Node *temp=head;
+
+int main()
+{
+   Node *n1=new Node(10);
+   Node *n2=new Node(20);
+   Node *n3=new Node(30);
+   Node *n4=new Node(40);
+   Node *n5=new Node(50);
+   n1->nect=n2; n2->prev=n1;
+   n2->next=n3; n3->prev=n2;
+   n3->next=n4; n4->prev=n5;
+   n4->next=n5; n5->prev=n4;
+   Node *head=n1;
+   printlinkedlist(head);
+   return 0;
+}
+
+
+3. create a 2d array and find its sum
+(if you have done try recursively)
+
+4. creat to a linkedlist and print it 
+(try it recursively also)
+
+------------------------------------------------
+3 solution
+------------
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    int arr[n][m];
+    int sum = 0;
+
+    
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            cin >> arr[i][j];
+            sum += arr[i][j];
+        }
+    }
+
+    cout << "Sum = " << sum;
+
+    return 0;
+}
+
+              or
+
+
+int sum2d (int arr[] [], int I, int j, int n, int m){
+if(i==n) return 0;
+if(j==m) return sum2d(arr,[i+1,]0,n,m);
+if(j==m)return sum2d(arr,[i+1,]0,n,m);
+return arr[i][j]+sum2d(arr,i,j+1,n,m);
+}
+-------------------------------------
+
+//cout total element in 2d array 
+//find sum of left diagonal using recursion in 2d array
+//find freq of a number in 2d array using recursion
+
+
+------------------------------------
+
+vpid printlinkedlist(Node *head){
+if(head==NULL) return;
+cout<<head->data<<"";
+printlinkedlist(head->next);
+}
+int main(){
+Node *n3
+-------------------------
+// Reverse a linkedlist 
+
+------------------------
+stack
+
+int main(){
+stack<int>s1;
+s1.push(10) ;// inserta element using push function
+s1.push(20);
+s1.push(30);
+while(!s1.empty()){ // give me a t or f
+cout<<s1.top();// it show top element 
+s1.pop();// delete element
+}
+
+----------------------------------------
+int main() {
+    stack<int> s1;
+    s1.push(10);
+    s1.push(20);
+    s1.push(30);
+
+    int sum = 0;
+
+    while (!s1.empty()) {
+        sum += s1.top();
+        s1.pop();
+    }
+
+    cout << "Sum = " << sum;
+
+    return 0;
+}
+-----------------------------------------
+// create a arr and reverse the arr using stack
+
+int main() {
+    int n;
+    cin >> n;
+
+    int arr[n];
+    stack<int> s;
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+        s.push(arr[i]);
+    }
+
+
+    for (int i = 0; i < n; i++) {
+        arr[i] = s.top();
+        s.pop();
+    }
+
+    cout << "Reversed Array: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
