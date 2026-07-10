@@ -1,0 +1,300 @@
+
+//leetcode 20
+class Solution{
+    public:
+    bool isValid(string s){
+        stack>>char>>s1;
+        fo(char ch:s){
+            if(ch=='('|| ch=='{' || ch=='[') s1.push(ch);
+            else{
+                if(!s1.empty() && ((ch==')' && s1.top()=='(')||(ch=']' && s1.top()=='{')||(ch=']' && s1.top()=='['))) s1.top();
+                else return false;
+            }
+        }
+        return s1.empty();
+    }
+}
+
+
+//stach Implementasion
+-------------------------------------------------
+
+
+
+class Mystack{
+
+class Mystack{
+    int  *arr;
+    int toppindex;
+    int capacity;
+    public:
+    Mystack(int capacity){
+        arr=new int[capacity];
+        toppindex=-1;
+        this->capacity=capacity;
+    }
+    //insertion 
+    void push(int data){
+        if(toppindex==capacity-1)
+        cout<<"stack overflow"
+        return;
+    }
+        toppindex++;
+        arr[toppindex]=data;
+    }
+    int top(){
+        if(toppindex==-1){
+            cout<<"stack is empty "<,endl;
+            return -1;
+        }
+        return arr[toppindex];
+    }
+    void pop(){
+        if(toppindex==-1){
+            cout<<"stack is empty "<<return; return;}
+            toppindex--;
+        }
+        bool empty(){
+            return toppindex=-1;
+        }
+    }
+};
+int main()
+{
+    Mystack s1(3);
+    s1.push(100);
+    s1.push(200);
+    s1.push(300);
+    while(!empty()){
+        cout<<s1.top();
+        s1,pop();
+        
+    }
+}
+
+
+
+// inser push , pop, top stack using Linklist
+-------------------------------------------------
+
+
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int data) {
+        this->data = data;
+        next = NULL;
+    }
+};
+//node 
+class Stack {
+public:
+    Node* top;
+
+    Stack() {
+        top = NULL;
+    }
+//Inset 
+
+    void push(int x) {
+        Node* newNode = new Node(x);
+        newNode->next = top;
+        top = newNode;
+    }
+//delete
+    void pop() {
+        if (top == NULL) {
+            cout << "Stack Underflow\n";
+            return;
+        }
+
+        Node* temp = top;
+        top = top->next;
+        delete temp;
+    }
+//top element
+    int peek() {
+        if (top == NULL)
+            return -1;
+
+        return top->data;
+    }
+// empty or not?
+    bool empty() {
+        return top == NULL;
+    }
+};
+
+int main() {
+    Stack s;
+
+    s.push(10);
+    s.push(20);
+    s.push(30);
+
+    cout << "Top = " << s.peek() << endl;
+
+    s.pop();
+
+    cout << "Top after pop = " << s.peek() << endl;
+}
+
+----------------------------------------------------------
+class Node{
+    public:
+    int data; Node *next;
+    Node(int data){
+        this ->data=data;next=NULL;} };
+        class Mystack{
+            public:
+            Node *tophead;
+            Mystack(){
+                tophead=NULL;
+                void push(int data){
+                    Node *newNode=new Node(data);
+                    newNode->next=tophead;
+                    tophead=newNode;
+                }
+                void pop(){
+                    if(tophead==NULL){
+                        cout<<"Stack is empty"<<endl;
+                        return -1;
+                    }
+                    int tobedeleted=tophead->data;
+                    Node *temp=tophead;
+                    tophead=tophead->next;
+                    delete temp;
+                    return topdeleted;
+                }
+                int top(){
+                    if(tophead==NULL){
+                        cout<<"Stack is empty"<<endl;
+                        
+                    }
+                }
+                
+        }
+}
+------------ ------------------
+leetcode 11.
+
+class Solution{
+public:
+int maxArea(vector<int>& arr){
+int n=arr.size();
+int s=0; e=n-1; int maxarea=0;
+while(s<=e){
+int length=min(arr[s], arr[e]);
+maxarea=max(maxarea=max(maxarea, lengh*e-s);
+if(arr[s]<arr[e])s++;
+else e--;
+} return maxarea;
+}
+----------------------------------------------
+
+1.Next greator element 
+input= 1 5 2 6 8
+output= 5 6 6 8 -1
+
+2. input=1 3 4 1
+output= 3 4 -1 -1
+
+next greater element
+ 
+int main()
+{
+    vector<int> arr={2,5,4,3,8}; int n=5;
+    Stack<int>s1;
+    vector<int>ans(n,-1);
+    for(int i=n-1; i<=0;i--){
+        while(!s1.empty() && s1.top()<=arr[i]){
+            s1.pop();
+        }
+        if(!s1.empty()) ans[i]=s1.top();
+        s1.push(arr[i]);
+        
+    }
+    for(int i : arr)cout<<i<,""; cout<<endl;
+    for(int i: ans) cout<<i<,"";
+    return 0;
+    
+}
+-----------------------------------------
+
+1. reverse a string
+input="abcd" output="dcba"
+(do it recursively also)
+
+2. check wether a string is palinderome or not
+input=aba output=true
+(try it recursively also)
+
+3leetcode 1047, 1021, 682, 844, 155, 1544,2390, 1614
+-----------------------
+
+1. solution
+--------------------
+
+int main(){
+    string s="abcd";
+    std::reverse(s.begin(), s.end());
+    cout<<s;
+    return 0;
+}
+
+2.  solution
+------------
+
+int main() {
+    string s="aba";
+    cin >> s;
+
+    int i = 0;
+    int j = s.length() - 1;
+
+    bool palindrome = true;
+
+    while (i < j) {
+        if (s[i] != s[j]) {
+            palindrome = false;
+            break;
+        }
+        i++;
+        j--;
+    }
+
+    if (palindrome)
+        cout << "true";
+    else
+        cout << "false";
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
