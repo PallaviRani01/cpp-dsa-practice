@@ -1,0 +1,34 @@
+15-07-2026
+
+viva 
+Friday
+arrays- binary search time complexity
+recursion, strings, searching, sorting
+
+Monday 
+linkedlist stack abd queue
+1. code a algo
+time complexity of any code
+deubug a code
+tell 2nd approach
+----------------------------------------------
+
+leetcode 112
+
+class Solution {
+public:
+    bool hasPathSum(TreeNode* root, int targetSum) {
+        
+        if(root == NULL)
+            return false;
+        
+        if(root->left == NULL && root->right == NULL) {
+            return targetSum == root->val;
+        }
+        
+        int remainingSum = targetSum - root->val;
+        
+        return hasPathSum(root->left, remainingSum) || 
+               hasPathSum(root->right, remainingSum);
+    }
+};
