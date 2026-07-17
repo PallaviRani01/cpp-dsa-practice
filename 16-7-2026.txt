@@ -1,0 +1,88 @@
+16-7-2026
+
+1. value Equal to or less than x
+Problem Statement
+Tom is working in a werehouse inventory system inventory where intem IDs are stored insorted ascending order.
+He wants to develop a program using recursive binary search to efficiently determine the largest item ID that is less than or equl to a given target value x.
+give the sorted array and the target value , print the largrst value, print the largest elemnt that is less then or equl to x.
+if no such element exists  print -1
+print the largest value less than or equal to x.
+array is sorted in ascending order.
+example
+input
+5
+2 4 6 8 10
+7
+ouput
+6
+------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int ans = -1;   
+
+void binarySearch(int arr[], int low, int high, int x) {
+    if (low > high)
+        return;
+
+    int mid = (low + high) / 2;
+
+    if (arr[mid] <= x) {
+        ans = arr[mid];               
+        binarySearch(arr, mid + 1, high, x); 
+    } else {
+        binarySearch(arr, low, mid - 1, x); 
+    }
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    int x;
+    cin >> x;
+
+    binarySearch(arr, 0, n - 1, x);
+
+    cout << ans;
+
+    return 0;
+}
+------------------------------------------------------------------------
+
+102 leetcode
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> ans;
+        
+        if (root == NULL) return ans;
+
+        queue<TreeNode*> q;
+        q.push(root);
+
+        while (!q.empty()) {
+            int size = q.size();
+            vector<int> level;
+
+            for (int i = 0; i < size; i++) {
+                TreeNode* node = q.front();
+                q.pop();
+
+                level.push_back(node->val);
+
+                if (node->left) q.push(node->left);
+                if (node->right) q.push(node->right);
+            }
+
+            ans.push_back(level);
+        }
+
+        return ans;
+    }
+};
