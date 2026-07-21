@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int fun(vector<vector<int>> &arr, int i, int j) {
+
+      
+        if (i == arr.size() - 1 && j == arr[0].size() - 1)
+            return arr[i][j];
+
+       
+        if (i >= arr.size() || j >= arr[0].size())
+            return INT_MAX;
+
+        int right = fun(arr, i, j + 1);
+        int down = fun(arr, i + 1, j);
+
+        
+        if (right == INT_MAX)
+            return arr[i][j] + down;
+        if (down == INT_MAX)
+            return arr[i][j] + right;
+
+        return arr[i][j] + min(right, down);
+    }
+
+    int minPathSum(vector<vector<int>>& grid) {
+        return fun(grid, 0, 0);
+    }
+};
