@@ -1,0 +1,26 @@
+CREATE DATABASE STD;
+USE STD;
+CREATE TABLE Student (
+    StudentID INT,
+    Name VARCHAR(50),
+    Age INT,
+    Marks INT,
+    Subject VARCHAR(50)
+);
+CREATE TABLE Department (
+    DeptID INT,
+    Name VARCHAR(50),
+    Location VARCHAR(50)
+);
+
+CREATE TABLE Product (
+    ProductID INT,
+    ProductName VARCHAR(50),
+    Price INT,
+    Quantity INT
+);
+
+SELECT * FROM Student;
+SELECT * FROM Department;
+SELECT * FROM Product;
+
